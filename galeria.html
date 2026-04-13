@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria - Adiminos</title>
     <style>
-        @import url('https://github.com/Norrisyt/norrisyt.github.io/tree/main/Norrisyt');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0f0f0f;
+            background: #0a0a0a;
             color: #ddd;
             line-height: 1.6;
         }
@@ -24,10 +20,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 15, 0.95);
+            background: rgba(10, 10, 10, 0.97);
             backdrop-filter: blur(12px);
             z-index: 100;
-            padding: 16px 0;
+            padding: 18px 0;
             border-bottom: 1px solid #222;
         }
 
@@ -42,8 +38,7 @@
             color: #ddd;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.08rem;
-            transition: color 0.3s;
+            font-size: 1.1rem;
         }
 
         .nav a:hover {
@@ -52,88 +47,42 @@
 
         .header {
             text-align: center;
-            padding: 120px 20px 60px;
+            padding: 130px 20px 70px;
         }
 
         .header h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.8rem;
-            margin-bottom: 12px;
             color: white;
+            margin-bottom: 10px;
         }
 
-        .header p {
-            font-size: 1.25rem;
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Galeria siatka */
         .gallery {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 12px;
+            gap: 15px;
         }
 
         .gallery-item {
-            position: relative;
             overflow: hidden;
             border-radius: 12px;
-            aspect-ratio: 4 / 3;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
             transition: all 0.4s ease;
         }
 
         .gallery-item:hover {
-            transform: scale(1.04);
-            box-shadow: 0 15px 40px rgba(255, 82, 82, 0.3);
+            transform: scale(1.06);
+            box-shadow: 0 15px 35px rgba(255, 82, 82, 0.25);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.12);
-        }
-
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.85));
-            padding: 25px 20px 20px;
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-
-        .overlay h3 {
-            font-size: 1.1rem;
-            margin-bottom: 4px;
-        }
-
-        .overlay p {
-            font-size: 0.95rem;
-            color: #ccc;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 80px 20px 40px;
-            color: #666;
-            font-size: 0.95rem;
+            display: block;
         }
     </style>
 </head>
@@ -152,43 +101,33 @@
 
     <div class="header">
         <h1>Moja Galeria</h1>
-        <p>ulica • komunikacja miejska • życie miasta • strażackie momenty</p>
+        <p style="color: #888; font-size: 1.2rem;">Fotografia uliczna • Komunikacja miejska • Życie miasta</p>
     </div>
 
-    <!-- GALERIA -->
+    <!-- === GALERIA ZDJĘĆ === -->
     <div class="gallery">
-        
-        <!-- Tutaj wstawiasz swoje zdjęcia -->
+
+        <!-- Tutaj dodawaj swoje zdjęcia -->
+        <!-- Przykład jak dodać zdjęcie: -->
+
         <div class="gallery-item">
-            <img src="zdjecia/tramwaj1.jpg" alt="Tramwaj w deszczu">
-            <div class="overlay">
-                <h3>Tramwaj nocą</h3>
-                <p>ulica • deszcz</p>
-            </div>
+            <img src="zdjecia/tramwaj1.jpg" alt="Tramwaj">
         </div>
 
         <div class="gallery-item">
-            <img src="tranwajpiaski1.jpg" alt="Autobus na pętli">
-            <div class="overlay">
-                <h3>Autobus na pętli</h3>
-                <p>złota godzina</p>
-            </div>
+            <img src="zdjecia/autobus1.jpg" alt="Autobus">
         </div>
 
         <div class="gallery-item">
-            <img src="zdjecia/ulica1.jpg" alt="Ulica miejska">
-            <div class="overlay">
-                <h3>Miasto w ruchu</h3>
-                <p>fotografia uliczna</p>
-            </div>
+            <img src="zdjecia/ulica1.jpg" alt="Ulica">
         </div>
 
-        <!-- Dodaj kolejne zdjęcia w ten sam sposób -->
+        <div class="gallery-item">
+            <img src="zdjecia/tramwaj-noc.jpg" alt="Tramwaj nocą">
+        </div>
 
-    </div>
+        <!-- Dodaj więcej bloków poniżej w ten sam sposób -->
 
-    <div class="footer">
-        <p>Adiminos © 2026 • Wszystkie zdjęcia zrobione telefonem</p>
     </div>
 
 </body>
