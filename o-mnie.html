@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O mnie</title>
+    <title>O mnie - Adiminos</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -11,26 +11,20 @@
 
         body {
             font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ddd;
             line-height: 1.75;
-            color: #222;
-            background: #f8f9fa;
-        }
-
-        .container {
-            max-width: 920px;
-            margin: 40px auto;
-            padding: 40px 20px;
         }
 
         .nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.97);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(12px);
             z-index: 100;
             padding: 16px 0;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #222;
         }
 
         .nav ul {
@@ -41,22 +35,26 @@
         }
 
         .nav a {
+            color: #ddd;
             text-decoration: none;
-            color: #222;
             font-weight: 500;
             font-size: 1.08rem;
         }
 
-        .nav a:hover {
-            color: #d32f2f;
+        .nav a:hover { color: #ff5252; }
+
+        .container {
+            max-width: 920px;
+            margin: 80px auto 40px;
+            padding: 40px 20px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.3rem;
+            font-size: 3.4rem;
             text-align: center;
-            margin-bottom: 45px;
-            color: #222;
+            margin-bottom: 50px;
+            color: white;
         }
 
         .photo {
@@ -66,45 +64,41 @@
             object-fit: cover;
             display: block;
             margin: 0 auto 45px;
-            border: 7px solid #d32f2f;
-            box-shadow: 0 10px 35px rgba(211, 47, 47, 0.18);
+            border: 7px solid #ff5252;
+            box-shadow: 0 10px 40px rgba(255, 82, 82, 0.25);
         }
 
         .section {
-            margin-bottom: 60px;
+            margin-bottom: 65px;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.25rem;
-            margin-bottom: 24px;
-            color: #222;
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            color: white;
         }
 
         p {
             font-size: 1.18rem;
-            color: #333;
+            color: #ccc;
             margin-bottom: 22px;
         }
 
-        .highlight {
-            color: #d32f2f;
-            font-weight: 600;
-        }
+        .highlight { color: #ff5252; font-weight: 600; }
 
         .back-link {
             display: inline-block;
             margin-top: 50px;
-            color: #d32f2f;
+            color: #ff5252;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.12rem;
+            font-size: 1.15rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Nawigacja -->
     <nav class="nav">
         <ul>
             <li><a href="index.html">Strona główna</a></li>
@@ -118,14 +112,13 @@
     <div class="container">
         <h1>O mnie</h1>
         
-        <!-- Zmień na swoje zdjęcie! -->
-        <img src="zdjecie-profilowe.jpg" alt="Adiminos" class="photo">
+        <img src="zdjecia/profil.jpg" alt="Adiminos" class="photo">
 
         <div class="section">
             <p>Cześć! Jestem <strong>Adiminos</strong>, mam 18 lat.</p>
             <p>
-                Z fotografią dopiero zaczynam, ale już mnie totalnie wciągnęło.  
-                Głównie walę zdjęcia telefonem i skupiam się na **fotografii ulicznej** – dokumentuję życie miasta, ludzi i klimat ulic.
+                Z fotografią dopiero zaczynam, ale już mnie wciągnęło na maksa.  
+                Głównie walę zdjęcia telefonem i skupiam się na fotografii ulicznej – dokumentuję życie miasta i te ulotne momenty.
             </p>
         </div>
 
@@ -133,29 +126,19 @@
             <h2>Moja zajawka</h2>
             <p>
                 Szczególnie jarają mnie <strong>wozy komunikacji miejskiej</strong> – autobusy, tramwaje, trolejbusy.  
-                Lubię łapać je w ruchu, w ciekawym świetle, na tle miasta albo w deszczu. To taki mój mały street photography vibe.
+                Lubię łapać je w ruchu, w deszczu, wieczorem albo w złotym świetle.
             </p>
         </div>
 
         <div class="section">
-            <h2>Strażacka strona</h2>
+            <h2>Straż</h2>
             <p>
-                Od 5 lat jestem w Ochotniczej Straży Pożarnej. Zaczynałem od MDP jako młodzik, a teraz jestem już **członkiem zwyczajnym** jednostki.
-            </p>
-            <p>
-                Straż to dla mnie mega szkoła życia – odpowiedzialność, team i adrenalina. Czasem biorę telefon na akcje czy ćwiczenia i dokumentuję też tę stronę mojego życia.
+                Od 5 lat jestem w OSP. Zaczynałem od MDP, teraz jestem członkiem zwyczajnym.  
+                Straż to adrenalina i odpowiedzialność, a fotografia to mój sposób na zatrzymanie tych chwil.
             </p>
         </div>
 
-        <div class="section">
-            <h2>Podsumowując</h2>
-            <p>
-                Na razie wszystko robię amatorsko – uczę się, eksperymentuję i po prostu bawię się fotografią.  
-                Chcę w przyszłości coraz lepiej pokazywać miasto i codzienne życie przez zdjęcia.
-            </p>
-        </div>
-
-        <a href="index.html" class="back-link">← Powrót do strony głównej</a>
+        <a href="index.html" class="back-link">← Powrót na stronę główną</a>
     </div>
 
 </body>
