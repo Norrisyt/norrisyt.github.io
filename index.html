@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta http-equiv="refresh" content="0; url=przerwa.html">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- === PRZERWA TECHNICZNA - WŁĄCZONA === -->
+    <!-- Aby WYŁĄCZYĆ przerwę - usuń lub zakomentuj poniższą linijkę -->
+    <meta http-equiv="refresh" content="0; url=przerwa.html">
+    
     <title>Adiminos | Fotografia uliczna</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0a0a;
             color: #ddd;
             line-height: 1.6;
         }
-
         /* Nawigacja */
         .nav {
             position: fixed;
@@ -28,14 +29,12 @@
             padding: 18px 0;
             border-bottom: 1px solid #222;
         }
-
         .nav ul {
             display: flex;
             justify-content: center;
             gap: 50px;
             list-style: none;
         }
-
         .nav a {
             color: #ddd;
             text-decoration: none;
@@ -43,40 +42,34 @@
             font-size: 1.1rem;
             transition: color 0.3s;
         }
-
         .nav a:hover {
             color: #ff5252;
         }
-
         /* Hero */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
                         url('zdjecia/hero.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
-
         .hero-content {
             max-width: 800px;
             padding: 20px;
         }
-
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4.2rem;
             margin-bottom: 16px;
             color: white;
         }
-
         .hero p {
             font-size: 1.35rem;
             color: #ccc;
             margin-bottom: 40px;
         }
-
         .btn {
             display: inline-block;
             padding: 15px 36px;
@@ -87,27 +80,22 @@
             font-size: 1.1rem;
             transition: all 0.4s;
         }
-
         .btn-primary {
             background: #ff5252;
             color: white;
         }
-
         .btn-primary:hover {
             background: #ff1744;
             transform: translateY(-4px);
         }
-
         .btn-outline {
             border: 2px solid #ddd;
             color: #ddd;
         }
-
         .btn-outline:hover {
             background: #ddd;
             color: #0a0a0a;
         }
-
         /* Krótka sekcja */
         .intro {
             padding: 100px 20px;
@@ -115,13 +103,11 @@
             margin: 0 auto;
             text-align: center;
         }
-
         .intro h2 {
             font-size: 2.4rem;
             margin-bottom: 25px;
             color: white;
         }
-
         .intro p {
             font-size: 1.2rem;
             color: #aaa;
@@ -131,7 +117,6 @@
     </style>
 </head>
 <body>
-
     <!-- Nawigacja -->
     <nav class="nav">
         <ul>
@@ -142,26 +127,23 @@
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
-
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <h1>Adiminos</h1>
-            <p>18 lat • Fotografia uliczna •Komunikacji miejskiej • Druh OSP</p>
-            
+            <p>18 lat • Fotografia uliczna • Komunikacja miejska • Druh OSP</p>
+           
             <a href="galeria.html" class="btn btn-primary">Zobacz galerię</a>
             <a href="o-mnie.html" class="btn btn-outline">O mnie</a>
         </div>
     </section>
-
     <!-- Wprowadzenie -->
     <section class="intro">
         <h2>Łapię miasto telefonem</h2>
         <p>
-            Zaczynam przygodę z fotografią uliczną. Najbardziej jarają mnie wozy komunikacji miejskiej – autobusy, tramwaje, pociągi w ruchu. 
+            Zaczynam przygodę z fotografią uliczną. Najbardziej jarają mnie wozy komunikacji miejskiej – autobusy, tramwaje, pociągi w ruchu.
             Dokumentuję życie miasta i czasem strażackie akcje. Wszystko na telefonie, bez ściemy.
         </p>
     </section>
-
 </body>
 </html>
