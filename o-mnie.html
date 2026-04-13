@@ -5,88 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O mnie</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #222;
             background: #f8f9fa;
-            color: #333;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 40px 20px;
         }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 16px 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            list-style: none;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            font-size: 1.08rem;
+        }
+
+        .nav a:hover {
+            color: #d32f2f;
+        }
+
         h1 {
-            color: #0366d6;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            color: #222;
         }
+
         .photo {
-            width: 180px;
-            height: 180px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
             display: block;
-            margin: 0 auto 25px;
-            border: 4px solid #0366d6;
+            margin: 0 auto 40px;
+            border: 6px solid #d32f2f;
+            box-shadow: 0 10px 30px rgba(211, 47, 47, 0.15);
         }
-        p {
-            font-size: 1.05rem;
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
             margin-bottom: 20px;
+            color: #222;
         }
+
+        p {
+            font-size: 1.12rem;
+            color: #444;
+            margin-bottom: 18px;
+        }
+
         .highlight {
-            background: #e6f0ff;
-            padding: 2px 6px;
-            border-radius: 4px;
+            color: #d32f2f;
+            font-weight: 600;
         }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
+
         .back-link {
             display: inline-block;
-            margin-top: 30px;
-            color: #0366d6;
+            margin-top: 40px;
+            color: #d32f2f;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
+
         .back-link:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
+
+    <!-- Nawigacja -->
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="o-mnie.html">O mnie</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="osp.html">OSP</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <h1>O mnie</h1>
         
-        <!-- Zmień zdjęcie na swoje! -->
-        <img src="https://via.placeholder.com/180" alt="Moje zdjęcie" class="photo">
-        
-        <p>Cześć! Nazywam się <strong>Twoje Imię Nazwisko</strong> i jestem <span class="highlight">pasjonatem technologii</span>, programistą / projektantem / twórcą (wpisz co robisz).</p>
-        
-        <p>Tworzę rzeczy w internecie od kilku lat. Interesuję się web developmentem, sztuczną inteligencją, designem i wszystkim, co pozwala budować fajne, użyteczne projekty.</p>
-        
-        <h2>Co mnie napędza?</h2>
-        <ul>
-            <li>Tworzenie czystego, responsywnego kodu</li>
-            <li>Rozwiązywanie realnych problemów użytkowników</li>
-            <li>Nauka nowych technologii i narzędzi</li>
-            <li>Budowanie rzeczy, z których sam chciałbym korzystać</li>
-        </ul>
-        
-        <h2>Doświadczenie / Umiejętności</h2>
-        <p>HTML • CSS • JavaScript • React • Git • Python • (dodaj swoje technologie)</p>
-        
-        <p>Obecnie szukam ciekawych projektów lub współpracy – chętnie porozmawiam!</p>
-        
+        <!-- Zmień na swoje prawdziwe zdjęcie! -->
+        <img src="https://via.placeholder.com/220" alt="Twoje zdjęcie" class="photo">
+
+        <div class="section">
+            <p>Cześć! Nazywam się <strong>[Twoje Imię i Nazwisko]</strong>.</p>
+            <p>
+                Z aparatem w ręku bawię się fotografią od kilku lat. Nie jestem zawodowcem – po prostu bardzo lubię łapać światło, emocje i ciekawe kadry. 
+                Fotografia to dla mnie forma relaksu, kreatywności i sposobu na zatrzymanie chwili, która nigdy się nie powtórzy.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Dwie pasje</h2>
+            <p>
+                Oprócz fotografii jestem <span class="highlight">druhem Ochotniczej Straży Pożarnej</span>. 
+                Te dwie rzeczy idealnie się uzupełniają. Na straży uczę się szybkości działania, pracy w zespole i radzenia sobie w trudnych warunkach. 
+                Z aparatem – cierpliwości, obserwacji i szukania piękna nawet w chaosie.
+            </p>
+            <p>
+                Często zabieram aparat na akcje, ćwiczenia czy wyjazdy strażackie. Dzięki temu mogę dokumentować życie jednostki i pokazywać, jak wygląda praca druhów od środka.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Co fotografuję?</h2>
+            <p>
+                Najbardziej lubię fotografię uliczną, krajobrazową i reportażową. 
+                Szczególnie interesuje mnie połączenie człowieka z otoczeniem – czy to podczas codziennego życia, czy w momentach pełnych adrenaliny na straży.
+            </p>
+            <p>
+                Wszystko robię amatorsko, ale z dużą pasją. Ucz się na błędach, eksperymentuję i cieszę się każdym nowym zdjęciem.
+            </p>
+        </div>
+
         <a href="index.html" class="back-link">← Powrót do strony głównej</a>
     </div>
+
 </body>
 </html>
