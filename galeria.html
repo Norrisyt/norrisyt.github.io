@@ -13,14 +13,13 @@
             font-family: 'Inter', sans-serif;
             background: #0a0a0a;
             color: #ddd;
-            line-height: 1.6;
         }
 
         .nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.97);
+            background: rgba(10,10,10,0.97);
             backdrop-filter: blur(12px);
             z-index: 100;
             padding: 18px 0;
@@ -38,12 +37,9 @@
             color: #ddd;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
         }
 
-        .nav a:hover {
-            color: #ff5252;
-        }
+        .nav a:hover { color: #ff5252; }
 
         .header {
             text-align: center;
@@ -54,7 +50,6 @@
             font-family: 'Playfair Display', serif;
             font-size: 3.8rem;
             color: white;
-            margin-bottom: 10px;
         }
 
         .gallery {
@@ -69,26 +64,22 @@
         .gallery-item {
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
         }
 
         .gallery-item:hover {
             transform: scale(1.06);
-            box-shadow: 0 15px 35px rgba(255, 82, 82, 0.25);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
     </style>
 </head>
 <body>
 
-    <!-- Nawigacja -->
     <nav class="nav">
         <ul>
             <li><a href="index.html">Strona główna</a></li>
@@ -101,32 +92,25 @@
 
     <div class="header">
         <h1>Moja Galeria</h1>
-        <p style="color: #888; font-size: 1.2rem;">Fotografia uliczna • Komunikacja miejska • Życie miasta</p>
     </div>
 
-    <!-- === GALERIA ZDJĘĆ === -->
     <div class="gallery">
 
-        <!-- Tutaj dodawaj swoje zdjęcia -->
-        <!-- Przykład jak dodać zdjęcie: -->
+        <!-- === TUTAJ WPISUJESZ ZDJĘCIA Z FOLDERU Norrisyt === -->
 
         <div class="gallery-item">
-            <img src="zdjecia/tramwaj1.jpg" alt="Tramwaj">
+            <img src="Norrisyt/tramwaj1.jpg" alt="Tramwaj">
         </div>
 
         <div class="gallery-item">
-            <img src="zdjecia/autobus1.jpg" alt="Autobus">
+            <img src="Norrisyt/autobus1.jpg" alt="Autobus">
         </div>
 
         <div class="gallery-item">
-            <img src="zdjecia/ulica1.jpg" alt="Ulica">
+            <img src="Norrisyt/ulica1.jpg" alt="Ulica">
         </div>
 
-        <div class="gallery-item">
-            <img src="zdjecia/tramwaj-noc.jpg" alt="Tramwaj nocą">
-        </div>
-
-        <!-- Dodaj więcej bloków poniżej w ten sam sposób -->
+        <!-- Dodawaj kolejne linie w ten sam sposób -->
 
     </div>
 
