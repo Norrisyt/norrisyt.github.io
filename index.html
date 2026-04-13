@@ -3,54 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twoje Imię | Fotografia</title>
+    <title>Adiminos | Fotografia uliczna</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ddd;
             line-height: 1.6;
-            color: #222;
-            background: #f9f9f9;
-        }
-
-        /* Hero z dużym zdjęciem */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), 
-                        url('https://via.placeholder.com/1920x1080/1a1a1a/ffffff?text=Twoje+Najlepsze+Zdjęcie') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.8rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -2px;
-        }
-
-        .hero .subtitle {
-            font-size: 1.45rem;
-            font-weight: 300;
-            opacity: 0.95;
-            margin-bottom: 40px;
         }
 
         /* Nawigacja */
@@ -58,11 +21,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(12px);
             z-index: 100;
             padding: 18px 0;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #222;
         }
 
         .nav ul {
@@ -73,64 +36,96 @@
         }
 
         .nav a {
+            color: #ddd;
             text-decoration: none;
-            color: #222;
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             transition: color 0.3s;
         }
 
         .nav a:hover {
-            color: #0366d6;
+            color: #ff5252;
         }
 
-        /* Sekcja o mnie */
-        .about {
-            padding: 120px 20px 100px;
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+                        url('zdjecia/hero.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 36px;
+            margin: 10px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.4s;
+        }
+
+        .btn-primary {
+            background: #ff5252;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ff1744;
+            transform: translateY(-4px);
+        }
+
+        .btn-outline {
+            border: 2px solid #ddd;
+            color: #ddd;
+        }
+
+        .btn-outline:hover {
+            background: #ddd;
+            color: #0a0a0a;
+        }
+
+        /* Krótka sekcja */
+        .intro {
+            padding: 100px 20px;
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 30px;
+        .intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: white;
         }
 
-        .about p {
-            font-size: 1.15rem;
+        .intro p {
+            font-size: 1.2rem;
+            color: #aaa;
             max-width: 680px;
-            margin: 0 auto 35px;
-            color: #444;
-        }
-
-        /* Przyciski */
-        .btn {
-            display: inline-block;
-            padding: 14px 36px;
-            border: 2px solid #222;
-            color: #222;
-            text-decoration: none;
-            font-weight: 500;
-            border-radius: 50px;
-            transition: all 0.4s;
-        }
-
-        .btn:hover {
-            background: #222;
-            color: white;
-        }
-
-        .btn-primary {
-            background: #222;
-            color: white;
-            border: 2px solid #222;
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: #222;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -142,6 +137,7 @@
             <li><a href="index.html">Strona główna</a></li>
             <li><a href="o-mnie.html">O mnie</a></li>
             <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="osp.html">OSP</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
@@ -149,26 +145,21 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Twoje Imię</h1>
-            <p class="subtitle">Fotograf • Twórca obrazów • Łowca światła</p>
+            <h1>Adiminos</h1>
+            <p>18 lat • Fotografia uliczna • Wozy komunikacji miejskiej • Druh OSP</p>
             
-            <a href="o-mnie.html" class="btn">Poznaj mnie</a>
-            <a href="galeria.html" class="btn btn-primary" style="margin-left: 15px;">Zobacz galerię</a>
+            <a href="galeria.html" class="btn btn-primary">Zobacz galerię</a>
+            <a href="o-mnie.html" class="btn btn-outline">O mnie</a>
         </div>
     </section>
 
-    <!-- Krótki opis -->
-    <section class="about">
-        <h2>Chwytam momenty, które zostają na zawsze</h2>
+    <!-- Wprowadzenie -->
+    <section class="intro">
+        <h2>Łapię miasto telefonem</h2>
         <p>
-            Specjalizuję się w fotografii portretowej, krajobrazowej i ulicznej. 
-            Dla mnie fotografia to nie tylko robienie zdjęć — to opowiadanie historii za pomocą światła, koloru i emocji.
+            Zaczynam przygodę z fotografią uliczną. Najbardziej jarają mnie wozy komunikacji miejskiej – autobusy, tramwaje, trolejbusy w ruchu. 
+            Dokumentuję życie miasta i czasem strażackie akcje. Wszystko na telefonie, bez ściemy.
         </p>
-        <p>
-            Pracuję zarówno w terenie, jak i w studio. Szukam piękna w codzienności i staram się pokazywać świat w sposób, jakiego jeszcze nie widziałeś.
-        </p>
-
-        <a href="o-mnie.html" class="btn" style="margin-top: 40px;">Więcej o mnie →</a>
     </section>
 
 </body>
