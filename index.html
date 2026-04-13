@@ -5,39 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adiminos | Fotografia uliczna</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
-            color: #ddd;
             line-height: 1.6;
+            color: #222;
+            background: #f9f9f9;
         }
+
+        /* Nawigacja */
         .nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10,10,10,0.97);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(12px);
             z-index: 100;
             padding: 18px 0;
-            border-bottom: 1px solid #222;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
+
         .nav ul {
             display: flex;
             justify-content: center;
             gap: 50px;
             list-style: none;
         }
+
         .nav a {
-            color: #ddd;
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #d32f2f;
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
+                        url('https://via.placeholder.com/1920x1080/1a1a1a/ffffff?text=Twoje+Najlepsze+Zdjęcie') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.45rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 40px;
+        }
+
+        /* Sekcja o mnie */
+        .about {
+            padding: 120px 20px 100px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            font-size: 1.15rem;
+            max-width: 680px;
+            margin: 0 auto 35px;
+            color: #444;
+        }
+
+        /* Przyciski */
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border: 2px solid #222;
+            color: #222;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.4s;
         }
-        .nav a:hover { color: #ff5252; }
 
+        .btn:hover {
+            background: #222;
+            color: white;
+        }
+
+        .btn-primary {
+            background: #222;
+            color: white;
+            border: 2px solid #222;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #222;
+        }
+
+        /* Panel administratora */
         .admin-btn {
             position: fixed;
             bottom: 20px;
@@ -49,7 +145,9 @@
             font-size: 0.9rem;
             cursor: pointer;
             z-index: 200;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
+
         .admin-panel {
             display: none;
             position: fixed;
@@ -57,13 +155,14 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: #111;
-            padding: 30px;
+            padding: 30px 40px;
             border-radius: 12px;
             border: 1px solid #444;
             z-index: 300;
             width: 90%;
             max-width: 400px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -84,41 +183,56 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Adiminos</h1>
-            <p>18 lat • Fotografia uliczna • Jarają mnie KM i wozy strażackie • Druh OSP</p>
+            <p class="subtitle">18 lat • Fotografia uliczna • Jarają mnie KM i wozy strażackie • Druh OSP</p>
            
-            <a href="galeria.html" class="btn btn-primary">Zobacz galerię</a>
-            <a href="o-mnie.html" class="btn btn-outline">O mnie</a>
+            <a href="o-mnie.html" class="btn">Poznaj mnie</a>
+            <a href="galeria.html" class="btn btn-primary" style="margin-left: 15px;">Zobacz galerię</a>
         </div>
     </section>
 
-    <!-- Wprowadzenie -->
-    <section class="intro">
-        <h2>Łapię miasto telefonem</h2>
+    <!-- Krótki opis -->
+    <section class="about">
+        <h2>Chwytam momenty, które zostają na zawsze</h2>
         <p>
             Zaczynam przygodę z fotografią uliczną i totalnie mnie to wciągnęło. 
-            Najbardziej jarają mnie wozy Kolei Mazowieckich — EN-ki, Flirty i cała reszta. 
-            Czasem też biorę telefon na akcje i dokumentuję wozy strażackie. 
-            Wszystko robię telefonem, bez ściemy.
+            Najbardziej jarają mnie wozy Kolei Mazowieckich i czasem wozy strażackie.
         </p>
+        <p>
+            Dokumentuję życie miasta telefonem — ulice, pociągi, autobusy i te ulotne chwile.
+            Straż to moja druga pasja — łączę obie rzeczy i staram się pokazywać świat takim, jaki jest.
+        </p>
+        <a href="o-mnie.html" class="btn" style="margin-top: 40px;">Więcej o mnie →</a>
     </section>
 
     <!-- Przycisk admina -->
     <div class="admin-btn" onclick="showAdminPanel()">🔧 Admin</div>
 
-    <!-- Panel administratora -->
+    <!-- Panel logowania administratora -->
     <div id="adminPanel" class="admin-panel">
-        <h2>Panel Administratora</h2>
-        <input type="password" id="adminPassword" placeholder="Wpisz hasło" style="width:100%; padding:10px; margin:15px 0;">
-        <button onclick="checkPassword()" style="padding:10px 20px; background:#ff5252; color:white; border:none; border-radius:8px; cursor:pointer;">Zaloguj</button>
-        <div id="adminControls" style="display:none; margin-top:20px;">
-            <button onclick="toggleMaintenance(true)" style="background:#ff5252; color:white; padding:12px; margin:5px; width:100%; border:none; border-radius:8px;">Włącz przerwę techniczną</button>
-            <button onclick="toggleMaintenance(false)" style="background:#333; color:white; padding:12px; margin:5px; width:100%; border:none; border-radius:8px;">Wyłącz przerwę techniczną</button>
+        <h2 style="color:#ff5252; margin-bottom:20px;">Panel Administratora</h2>
+        <input type="password" id="adminPassword" placeholder="Wpisz hasło" 
+               style="width:100%; padding:12px; margin:15px 0; border-radius:8px; border:1px solid #555; background:#222; color:white;">
+        <button onclick="checkPassword()" 
+                style="padding:12px 24px; background:#ff5252; color:white; border:none; border-radius:8px; cursor:pointer; width:100%; margin-bottom:10px;">
+            Zaloguj się
+        </button>
+        <div id="adminControls" style="display:none; margin-top:15px;">
+            <button onclick="toggleMaintenance(true)" 
+                    style="background:#ff5252; color:white; padding:12px; margin:5px 0; width:100%; border:none; border-radius:8px;">
+                Włącz przerwę techniczną
+            </button>
+            <button onclick="toggleMaintenance(false)" 
+                    style="background:#333; color:white; padding:12px; margin:5px 0; width:100%; border:none; border-radius:8px;">
+                Wyłącz przerwę techniczną
+            </button>
         </div>
-        <button onclick="hideAdminPanel()" style="margin-top:15px; color:#888;">Zamknij</button>
+        <button onclick="hideAdminPanel()" style="margin-top:15px; color:#888; background:none; border:none; cursor:pointer;">
+            Zamknij
+        </button>
     </div>
 
     <script>
-        const ADMIN_PASSWORD = "twojehaslo123";   // ← ZMIEŃ TO NA SWOJE HASŁO!
+        const ADMIN_PASSWORD = "twojehaslo123";   // ← ZMIEŃ NA SWOJE HASŁO!
 
         function showAdminPanel() {
             document.getElementById("adminPanel").style.display = "block";
@@ -126,6 +240,7 @@
 
         function hideAdminPanel() {
             document.getElementById("adminPanel").style.display = "none";
+            document.getElementById("adminPassword").value = "";
         }
 
         function checkPassword() {
@@ -133,22 +248,22 @@
             if (input === ADMIN_PASSWORD) {
                 document.getElementById("adminControls").style.display = "block";
             } else {
-                alert("Niepoprawne hasło!");
+                alert("❌ Niepoprawne hasło!");
             }
         }
 
         function toggleMaintenance(enable) {
             if (enable) {
                 localStorage.setItem("maintenanceMode", "true");
-                alert("Przerwa techniczna WŁĄCZONA. Odśwież stronę.");
+                alert("✅ Przerwa techniczna została WŁĄCZONA");
             } else {
                 localStorage.removeItem("maintenanceMode");
-                alert("Przerwa techniczna WYŁĄCZONA.");
+                alert("✅ Przerwa techniczna została WYŁĄCZONA");
             }
             hideAdminPanel();
         }
 
-        // Sprawdzenie czy przerwa jest włączona
+        // Automatyczne przekierowanie jeśli przerwa jest włączona
         window.onload = function() {
             if (localStorage.getItem("maintenanceMode") === "true") {
                 window.location.href = "przerwa.html";
