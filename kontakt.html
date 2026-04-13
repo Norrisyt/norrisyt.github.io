@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Adiminos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            padding: 18px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            list-style: none;
+        }
+
+        .nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .nav a:hover { color: #ff5252; }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto 80px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #aaa;
+            margin-bottom: 60px;
+        }
+
+        .contact-box {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            margin: 35px 0;
+        }
+
+        .contact-item a {
+            color: #ff5252;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #ff1744;
+            text-decoration: underline;
+        }
+
+        .icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nawigacja -->
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="o-mnie.html">O mnie</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="osp.html">OSP</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Kontakt</h1>
+        <p class="subtitle">Chcesz pogadać o zdjęciach, współpracy czy straży? Napisz śmiało!</p>
+
+        <div class="contact-box">
+            
+            <div class="contact-item">
+                <span class="icon">📸</span>
+                <a href="https://www.instagram.com/" target="_blank">Instagram: @adiminos</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="icon">✉️</span>
+                <a href="mailto:twoj.email@gmail.com">twoj.email@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="icon">🔥</span>
+                <a href="#" target="_blank">TikTok: @adiminos</a>
+            </div>
+
+        </div>
+
+        <p class="footer-text">
+            Aktualnie jestem otwarty na współpracę przy projektach fotograficznych<br>
+            oraz na wymianę doświadczeń ze straży i fotografii ulicznej.
+        </p>
+    </div>
+
+</body>
+</html>
