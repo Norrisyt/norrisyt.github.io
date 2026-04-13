@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- PRZERWA TECHNICZNA - WYŁĄCZONA -->
-    <!-- Aby włączyć przerwę techniczną, usuń komentarz z poniższej linijki -->
-   
-    
     <title>Adiminos | Fotografia uliczna</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
@@ -18,12 +14,11 @@
             color: #ddd;
             line-height: 1.6;
         }
-        /* Nawigacja */
         .nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(10,10,10,0.97);
             backdrop-filter: blur(12px);
             z-index: 100;
             padding: 18px 0;
@@ -40,83 +35,40 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 1.1rem;
-            transition: color 0.3s;
         }
-        .nav a:hover {
-            color: #ff5252;
+        .nav a:hover { color: #ff5252; }
+
+        .admin-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 200;
         }
-        /* Hero */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-                        url('zdjecia/hero.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #111;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #444;
+            z-index: 300;
+            width: 90%;
+            max-width: 400px;
             text-align: center;
-        }
-        .hero-content {
-            max-width: 800px;
-            padding: 20px;
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.2rem;
-            margin-bottom: 16px;
-            color: white;
-        }
-        .hero p {
-            font-size: 1.35rem;
-            color: #ccc;
-            margin-bottom: 40px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 15px 36px;
-            margin: 10px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.4s;
-        }
-        .btn-primary {
-            background: #ff5252;
-            color: white;
-        }
-        .btn-primary:hover {
-            background: #ff1744;
-            transform: translateY(-4px);
-        }
-        .btn-outline {
-            border: 2px solid #ddd;
-            color: #ddd;
-        }
-        .btn-outline:hover {
-            background: #ddd;
-            color: #0a0a0a;
-        }
-        /* Krótka sekcja */
-        .intro {
-            padding: 100px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .intro h2 {
-            font-size: 2.4rem;
-            margin-bottom: 25px;
-            color: white;
-        }
-        .intro p {
-            font-size: 1.2rem;
-            color: #aaa;
-            max-width: 680px;
-            margin: 0 auto;
         }
     </style>
 </head>
 <body>
+
     <!-- Nawigacja -->
     <nav class="nav">
         <ul>
@@ -146,8 +98,62 @@
             Zaczynam przygodę z fotografią uliczną i totalnie mnie to wciągnęło. 
             Najbardziej jarają mnie wozy Kolei Mazowieckich — EN-ki, Flirty i cała reszta. 
             Czasem też biorę telefon na akcje i dokumentuję wozy strażackie. 
-            Wszystko robię telefonem, bez ściemy i bez udawania zawodowca.
+            Wszystko robię telefonem, bez ściemy.
         </p>
     </section>
+
+    <!-- Przycisk admina -->
+    <div class="admin-btn" onclick="showAdminPanel()">🔧 Admin</div>
+
+    <!-- Panel administratora -->
+    <div id="adminPanel" class="admin-panel">
+        <h2>Panel Administratora</h2>
+        <input type="password" id="adminPassword" placeholder="Wpisz hasło" style="width:100%; padding:10px; margin:15px 0;">
+        <button onclick="checkPassword()" style="padding:10px 20px; background:#ff5252; color:white; border:none; border-radius:8px; cursor:pointer;">Zaloguj</button>
+        <div id="adminControls" style="display:none; margin-top:20px;">
+            <button onclick="toggleMaintenance(true)" style="background:#ff5252; color:white; padding:12px; margin:5px; width:100%; border:none; border-radius:8px;">Włącz przerwę techniczną</button>
+            <button onclick="toggleMaintenance(false)" style="background:#333; color:white; padding:12px; margin:5px; width:100%; border:none; border-radius:8px;">Wyłącz przerwę techniczną</button>
+        </div>
+        <button onclick="hideAdminPanel()" style="margin-top:15px; color:#888;">Zamknij</button>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = "twojehaslo123";   // ← ZMIEŃ TO NA SWOJE HASŁO!
+
+        function showAdminPanel() {
+            document.getElementById("adminPanel").style.display = "block";
+        }
+
+        function hideAdminPanel() {
+            document.getElementById("adminPanel").style.display = "none";
+        }
+
+        function checkPassword() {
+            const input = document.getElementById("adminPassword").value;
+            if (input === ADMIN_PASSWORD) {
+                document.getElementById("adminControls").style.display = "block";
+            } else {
+                alert("Niepoprawne hasło!");
+            }
+        }
+
+        function toggleMaintenance(enable) {
+            if (enable) {
+                localStorage.setItem("maintenanceMode", "true");
+                alert("Przerwa techniczna WŁĄCZONA. Odśwież stronę.");
+            } else {
+                localStorage.removeItem("maintenanceMode");
+                alert("Przerwa techniczna WYŁĄCZONA.");
+            }
+            hideAdminPanel();
+        }
+
+        // Sprawdzenie czy przerwa jest włączona
+        window.onload = function() {
+            if (localStorage.getItem("maintenanceMode") === "true") {
+                window.location.href = "przerwa.html";
+            }
+        }
+    </script>
 </body>
 </html>
