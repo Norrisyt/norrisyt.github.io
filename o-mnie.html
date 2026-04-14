@@ -6,13 +6,16 @@
     <title>O mnie - Adiminos</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0a0a;
             color: #ddd;
             line-height: 1.75;
         }
+
         .nav {
             position: fixed;
             top: 0;
@@ -23,44 +26,65 @@
             padding: 18px 0;
             border-bottom: 1px solid #222;
         }
+
         .nav ul {
             display: flex;
             justify-content: center;
             gap: 50px;
             list-style: none;
         }
+
         .nav a {
             color: #ddd;
             text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem;
         }
+
         .nav a:hover { color: #ff5252; }
 
         .container {
-            max-width: 900px;
-            margin: 100px auto 60px;
+            max-width: 920px;
+            margin: 100px auto 80px;
             padding: 40px 20px;
         }
+
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.4rem;
+            font-size: 3.5rem;
             text-align: center;
             margin-bottom: 50px;
             color: white;
         }
+
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
-            margin-bottom: 25px;
+            font-size: 2.4rem;
+            margin-bottom: 28px;
             color: white;
         }
+
         p {
             font-size: 1.18rem;
             color: #ccc;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
+            text-align: justify;
         }
-        .highlight { color: #ff5252; font-weight: 600; }
+
+        .highlight {
+            color: #ff5252;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 70px;
+            color: #ff5252;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
@@ -81,7 +105,7 @@
         <p>Cześć! Jestem <strong>Adiminos</strong>, mam 18 lat.</p>
 
         <p>
-            Z fotografią jestem dopiero na początku drogi, ale już mnie ona mocno wciągnęła. 
+            Z fotografią jestem dopiero na początku drogi, ale już mocno mnie wciągnęła. 
             Wszystko robię telefonem – nie gonię za idealnymi kadrami, tylko staram się łapać prawdziwe momenty: światło na ulicy, ludzi w biegu i emocje, które dzieją się tylko przez chwilę.
         </p>
 
@@ -106,12 +130,11 @@
         </p>
 
         <p>
-            Te dwie pasje – fotografia i straż – świetnie się uzupełniają. 
-            Jedna uczy mnie cierpliwości i patrzenia, druga szybkości i działania. 
+            Te dwie pasje świetnie się uzupełniają. Fotografia uczy mnie cierpliwości i patrzenia, a straż – szybkości i działania. 
             Staram się łączyć jedno z drugim, jak tylko mogę.
         </p>
 
-        <a href="index.html" style="color:#ff5252; text-decoration:none; font-weight:600; display:block; margin-top:60px;">← Powrót na stronę główną</a>
+        <a href="index.html" class="back-link">← Powrót na stronę główną</a>
     </div>
 
 </body>
