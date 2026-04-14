@@ -6,16 +6,13 @@
     <title>Adiminos | Fotografia uliczna</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0a0a;
             color: #ddd;
             line-height: 1.6;
         }
-
         .nav {
             position: fixed;
             top: 0;
@@ -26,21 +23,18 @@
             padding: 18px 0;
             border-bottom: 1px solid #222;
         }
-
         .nav ul {
             display: flex;
             justify-content: center;
             gap: 50px;
             list-style: none;
         }
-
         .nav a {
             color: #ddd;
             text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem;
         }
-
         .nav a:hover { color: #ff5252; }
 
         .hero {
@@ -53,19 +47,16 @@
             text-align: center;
             color: white;
         }
-
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4.6rem;
             margin-bottom: 10px;
         }
-
         .hero .subtitle {
             font-size: 1.35rem;
             opacity: 0.9;
             margin-bottom: 40px;
         }
-
         .btn {
             display: inline-block;
             padding: 14px 34px;
@@ -75,7 +66,6 @@
             margin: 8px;
             transition: 0.3s;
         }
-
         .btn-primary { background: #ff5252; color: white; }
         .btn-outline { border: 2px solid #ddd; color: #ddd; }
 
@@ -85,14 +75,13 @@
             margin: 0 auto;
             text-align: center;
         }
-
         .intro h2 {
             font-size: 2.4rem;
             margin-bottom: 25px;
             color: white;
         }
 
-        /* Panel Administratora */
+        /* Panel Admin */
         .admin-btn {
             position: fixed;
             bottom: 25px;
@@ -156,7 +145,7 @@
     <!-- Przycisk Administratora -->
     <div class="admin-btn" onclick="showAdminPanel()">🔧 Admin</div>
 
-    <!-- Panel logowania -->
+    <!-- Panel Administratora -->
     <div id="adminPanel" class="admin-panel">
         <h2 style="color:#ff5252; margin-bottom:25px;">Panel Administratora</h2>
         
@@ -208,15 +197,14 @@
         function toggleMaintenance(enable) {
             if (enable) {
                 localStorage.setItem("maintenanceMode", "true");
-                alert("✅ Przerwa techniczna została WŁĄCZONA");
+                alert("✅ Przerwa techniczna WŁĄCZONA");
             } else {
                 localStorage.removeItem("maintenanceMode");
-                alert("✅ Przerwa techniczna została WYŁĄCZONA");
+                alert("✅ Przerwa techniczna WYŁĄCZONA");
             }
             hideAdminPanel();
         }
 
-        // Automatyczne przekierowanie jeśli przerwa jest włączona
         window.onload = function() {
             if (localStorage.getItem("maintenanceMode") === "true") {
                 window.location.href = "przerwa.html";
