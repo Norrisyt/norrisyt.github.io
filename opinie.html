@@ -76,8 +76,18 @@
         button:hover {
             background: #ff1744;
         }
-        .success { color: #4ade80; margin-top: 20px; display: none; text-align: center; }
-        .error { color: #ff5252; margin-top: 20px; display: none; text-align: center; }
+        .success {
+            color: #4ade80;
+            margin-top: 25px;
+            text-align: center;
+            display: none;
+        }
+        .error {
+            color: #ff5252;
+            margin-top: 25px;
+            text-align: center;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +106,7 @@
     <div class="container">
         <h1>Napisz opinię</h1>
         <p style="text-align:center; color:#aaa; margin-bottom:40px;">
-            Twoja opinia zostanie zapisana bezpośrednio jako Issue na GitHubie
+            Twoja opinia zostanie zapisana jako Issue na GitHubie
         </p>
 
         <form id="opinionForm">
@@ -109,7 +119,7 @@
     </div>
 
     <script>
-        const TOKEN = "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";
+        const TOKEN = "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";
         const REPO = "Norrisyt/norrisyt.github.io";
 
         document.getElementById("opinionForm").addEventListener("submit", async function(e) {
