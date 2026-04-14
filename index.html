@@ -16,7 +16,6 @@
             line-height: 1.6;
         }
 
-        /* Nawigacja */
         .nav {
             position: fixed;
             top: 0;
@@ -36,22 +35,18 @@
         }
 
         .nav a {
-            text-decoration: none;
             color: #ddd;
+            text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem;
-            transition: color 0.3s;
         }
 
-        .nav a:hover {
-            color: #ff5252;
-        }
+        .nav a:hover { color: #ff5252; }
 
-        /* Hero */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-                        url('https://via.placeholder.com/1920x1080/1a1a1a/ffffff?text=Twoje+Najlepsze+Zdjęcie') no-repeat center center/cover;
+                        url('zdjecia/hero.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,107 +54,54 @@
             color: white;
         }
 
-        .hero-content {
-            max-width: 800px;
-            z-index: 2;
-        }
-
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.8rem;
-            font-weight: 700;
+            font-size: 4.6rem;
             margin-bottom: 12px;
-            letter-spacing: -2px;
         }
 
         .hero .subtitle {
-            font-size: 1.45rem;
-            font-weight: 300;
-            opacity: 0.95;
-            margin-bottom: 40px;
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 45px;
         }
 
-        /* Sekcja about */
-        .about {
-            padding: 120px 20px 100px;
+        .btn {
+            display: inline-block;
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #ff5252;
+            color: white;
+        }
+
+        .btn-outline {
+            border: 2px solid #ddd;
+            color: #ddd;
+        }
+
+        .intro {
+            padding: 100px 20px;
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 30px;
+        .intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
             color: white;
-        }
-
-        .about p {
-            font-size: 1.15rem;
-            max-width: 680px;
-            margin: 0 auto 35px;
-            color: #ccc;
-        }
-
-        /* Przyciski */
-        .btn {
-            display: inline-block;
-            padding: 14px 36px;
-            border: 2px solid #ddd;
-            color: #ddd;
-            text-decoration: none;
-            font-weight: 500;
-            border-radius: 50px;
-            transition: all 0.4s;
-        }
-
-        .btn:hover {
-            background: #ddd;
-            color: #0a0a0a;
-        }
-
-        .btn-primary {
-            background: #ddd;
-            color: #0a0a0a;
-            border: 2px solid #ddd;
-        }
-
-        /* Panel Admina */
-        .admin-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #222;
-            color: #ddd;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            z-index: 200;
-            border: 1px solid #444;
-        }
-
-        .admin-panel {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #111;
-            padding: 35px 40px;
-            border-radius: 12px;
-            border: 1px solid #444;
-            z-index: 300;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
         }
     </style>
 </head>
 <body>
 
-    <!-- Nawigacja -->
     <nav class="nav">
         <ul>
             <li><a href="index.html">Strona główna</a></li>
@@ -170,96 +112,24 @@
         </ul>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <h1>Adiminos</h1>
             <p class="subtitle">18 lat • Fotografia uliczna • Jarają mnie KM i wozy strażackie • Druh OSP</p>
-           
-            <a href="o-mnie.html" class="btn">Poznaj mnie</a>
-            <a href="galeria.html" class="btn btn-primary" style="margin-left: 15px;">Zobacz galerię</a>
+            
+            <a href="galeria.html" class="btn btn-primary">Zobacz galerię</a>
+            <a href="o-mnie.html" class="btn btn-outline">O mnie</a>
         </div>
     </section>
 
-    <!-- Krótki opis -->
-    <section class="about">
-        <h2>Chwytam momenty, które zostają na zawsze</h2>
+    <section class="intro">
+        <h2>Łapię miasto telefonem</h2>
         <p>
             Zaczynam przygodę z fotografią uliczną i totalnie mnie to wciągnęło. 
-            Najbardziej jarają mnie wozy Kolei Mazowieckich i czasem wozy strażackie.
+            Najbardziej jarają mnie wozy Kolei Mazowieckich i czasem wozy strażackie. 
+            Dokumentuję życie miasta, akcje i codzienne klimaty — wszystko telefonem, bez ściemy.
         </p>
-        <p>
-            Dokumentuję życie miasta telefonem — ulice, pociągi, autobusy i te ulotne chwile.
-            Straż to moja druga pasja — łączę obie rzeczy i staram się pokazywać świat takim, jaki jest.
-        </p>
-        <a href="o-mnie.html" class="btn" style="margin-top: 40px;">Więcej o mnie →</a>
     </section>
 
-    <!-- Przycisk Admin -->
-    <div class="admin-btn" onclick="showAdminPanel()">🔧 Admin</div>
-
-    <!-- Panel Administratora -->
-    <div id="adminPanel" class="admin-panel">
-        <h2 style="color:#ff5252; margin-bottom:20px;">Panel Administratora</h2>
-        <input type="password" id="adminPassword" placeholder="Wpisz hasło" 
-               style="width:100%; padding:12px; margin:15px 0; border-radius:8px; border:1px solid #555; background:#1a1a1a; color:white;">
-        <button onclick="checkPassword()" 
-                style="padding:12px 24px; background:#ff5252; color:white; border:none; border-radius:8px; cursor:pointer; width:100%; margin:10px 0;">
-            Zaloguj się
-        </button>
-        <div id="adminControls" style="display:none; margin-top:15px;">
-            <button onclick="toggleMaintenance(true)" 
-                    style="background:#ff5252; color:white; padding:12px; margin:8px 0; width:100%; border:none; border-radius:8px;">
-                Włącz przerwę techniczną
-            </button>
-            <button onclick="toggleMaintenance(false)" 
-                    style="background:#333; color:white; padding:12px; margin:8px 0; width:100%; border:none; border-radius:8px;">
-                Wyłącz przerwę techniczną
-            </button>
-        </div>
-        <button onclick="hideAdminPanel()" style="margin-top:15px; color:#888; background:none; border:none; cursor:pointer;">
-            Zamknij
-        </button>
-    </div>
-
-    <script>
-        const ADMIN_PASSWORD = "Shire123%";   // Twoje hasło
-
-        function showAdminPanel() {
-            document.getElementById("adminPanel").style.display = "block";
-        }
-
-        function hideAdminPanel() {
-            document.getElementById("adminPanel").style.display = "none";
-            document.getElementById("adminPassword").value = "";
-        }
-
-        function checkPassword() {
-            const input = document.getElementById("adminPassword").value;
-            if (input === ADMIN_PASSWORD) {
-                document.getElementById("adminControls").style.display = "block";
-            } else {
-                alert("❌ Niepoprawne hasło!");
-            }
-        }
-
-        function toggleMaintenance(enable) {
-            if (enable) {
-                localStorage.setItem("maintenanceMode", "true");
-                alert("Przerwa techniczna została WŁĄCZONA");
-            } else {
-                localStorage.removeItem("maintenanceMode");
-                alert("Przerwa techniczna została WYŁĄCZONA");
-            }
-            hideAdminPanel();
-        }
-
-        // Sprawdzenie czy przerwa jest włączona
-        window.onload = function() {
-            if (localStorage.getItem("maintenanceMode") === "true") {
-                window.location.href = "przerwa.html";
-            }
-        }
-    </script>
 </body>
 </html>
