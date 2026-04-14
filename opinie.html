@@ -54,7 +54,7 @@
         }
         textarea {
             width: 100%;
-            height: 200px;
+            height: 220px;
             padding: 16px;
             background: #1a1a1a;
             border: 1px solid #444;
@@ -75,18 +75,6 @@
         }
         button:hover {
             background: #ff1744;
-        }
-        .success {
-            color: #4ade80;
-            margin-top: 25px;
-            text-align: center;
-            display: none;
-        }
-        .error {
-            color: #ff5252;
-            margin-top: 25px;
-            text-align: center;
-            display: none;
         }
     </style>
 </head>
@@ -109,60 +97,17 @@
             Twoja opinia zostanie zapisana jako Issue na GitHubie
         </p>
 
-        <form id="opinionForm">
-            <textarea id="opinionText" placeholder="Co Ci się podobało? Co można poprawić? Jakie masz uwagi? Napisz szczerze..." required></textarea>
-            <button type="submit">Wyślij opinię</button>
+        <form action="https://github.com/Norrisyt/norrisyt.github.io/issues/new" method="get" target="_blank">
+            <input type="hidden" name="title" value="Opinia ze strony">
+            <textarea name="body" placeholder="Co Ci się podobało? Co można poprawić? Jakie masz uwagi? Napisz szczerze..." required></textarea>
+            <button type="submit">Wyślij opinię na GitHub</button>
         </form>
 
-        <p id="successMessage" class="success">✅ Opinia została wysłana pomyślnie!</p>
-        <p id="errorMessage" class="error">❌ Coś poszło nie tak. Spróbuj ponownie.</p>
+        <p style="text-align:center; color:#888; margin-top:40px; font-size:0.95rem;">
+            Po kliknięciu przycisku otworzy się GitHub.<br>
+            Wystarczy kliknąć zielony przycisk „Submit new issue”.
+        </p>
     </div>
 
-    <script>
-        const TOKEN = "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";
-        const REPO = "Norrisyt/norrisyt.github.io";
-
-        document.getElementById("opinionForm").addEventListener("submit", async function(e) {
-            e.preventDefault();
-
-            const text = document.getElementById("opinionText").value.trim();
-            if (!text) return alert("Napisz coś przed wysłaniem!");
-
-            const button = this.querySelector("button");
-            button.disabled = true;
-            button.textContent = "Wysyłam...";
-
-            try {
-                const response = await fetch(`https://api.github.com/repos/${REPO}/issues`, {
-                    method: "POST",
-                    headers: {
-                        "Authorization": `token ${TOKEN}`,
-                        "Accept": "application/vnd.github.v3+json",
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        title: "Opinia ze strony",
-                        body: text,
-                        labels: ["opinia"]
-                    })
-                });
-
-                if (response.ok) {
-                    document.getElementById("successMessage").style.display = "block";
-                    document.getElementById("opinionText").value = "";
-                    setTimeout(() => {
-                        document.getElementById("successMessage").style.display = "none";
-                    }, 6000);
-                } else {
-                    document.getElementById("errorMessage").style.display = "block";
-                }
-            } catch (error) {
-                document.getElementById("errorMessage").style.display = "block";
-            }
-
-            button.disabled = false;
-            button.textContent = "Wyślij opinię";
-        });
-    </script>
 </body>
 </html>
