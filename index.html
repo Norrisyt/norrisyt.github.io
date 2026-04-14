@@ -6,13 +6,16 @@
     <title>Adiminos | Fotografia uliczna</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0a0a;
             color: #ddd;
             line-height: 1.6;
         }
+
         .nav {
             position: fixed;
             top: 0;
@@ -23,18 +26,21 @@
             padding: 18px 0;
             border-bottom: 1px solid #222;
         }
+
         .nav ul {
             display: flex;
             justify-content: center;
             gap: 50px;
             list-style: none;
         }
+
         .nav a {
             color: #ddd;
             text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem;
         }
+
         .nav a:hover { color: #ff5252; }
 
         .hero {
@@ -47,36 +53,49 @@
             text-align: center;
             color: white;
         }
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.6rem;
-            margin-bottom: 10px;
+            font-size: 4.8rem;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
         }
+
         .hero .subtitle {
-            font-size: 1.35rem;
-            opacity: 0.9;
-            margin-bottom: 40px;
+            font-size: 1.4rem;
+            opacity: 0.92;
+            margin-bottom: 45px;
         }
+
         .btn {
             display: inline-block;
-            padding: 14px 34px;
+            padding: 15px 36px;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
             margin: 8px;
-            transition: 0.3s;
+            transition: all 0.3s;
         }
-        .btn-primary { background: #ff5252; color: white; }
-        .btn-outline { border: 2px solid #ddd; color: #ddd; }
+
+        .btn-primary {
+            background: #ff5252;
+            color: white;
+        }
+
+        .btn-outline {
+            border: 2px solid #ddd;
+            color: #ddd;
+        }
 
         .intro {
-            padding: 100px 20px;
-            max-width: 900px;
+            padding: 110px 20px;
+            max-width: 920px;
             margin: 0 auto;
             text-align: center;
         }
+
         .intro h2 {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             margin-bottom: 25px;
             color: white;
         }
@@ -92,6 +111,7 @@
             border-radius: 8px;
             cursor: pointer;
             z-index: 200;
+            font-size: 0.95rem;
         }
 
         .admin-panel {
@@ -128,6 +148,7 @@
         <div class="hero-content">
             <h1>Adiminos</h1>
             <p class="subtitle">18 lat • Fotografia uliczna • Jarają mnie KM i wozy strażackie • Druh OSP</p>
+            
             <a href="galeria.html" class="btn btn-primary">Zobacz galerię</a>
             <a href="o-mnie.html" class="btn btn-outline">O mnie</a>
         </div>
