@@ -81,7 +81,7 @@
             color: white;
         }
 
-        /* Panel Admin */
+        /* Panel Administratora */
         .admin-btn {
             position: fixed;
             bottom: 25px;
@@ -145,7 +145,7 @@
     <!-- Przycisk Administratora -->
     <div class="admin-btn" onclick="showAdminPanel()">🔧 Admin</div>
 
-    <!-- Panel Administratora -->
+    <!-- Panel logowania -->
     <div id="adminPanel" class="admin-panel">
         <h2 style="color:#ff5252; margin-bottom:25px;">Panel Administratora</h2>
         
@@ -205,6 +205,7 @@
             hideAdminPanel();
         }
 
+        // Automatyczne przekierowanie jeśli przerwa jest włączona
         window.onload = function() {
             if (localStorage.getItem("maintenanceMode") === "true") {
                 window.location.href = "przerwa.html";
