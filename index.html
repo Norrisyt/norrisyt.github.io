@@ -6,13 +6,16 @@
     <title>Adiminos | Fotografia uliczna</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0a0a;
             color: #ddd;
             line-height: 1.6;
         }
+
         .nav {
             position: fixed;
             top: 0;
@@ -23,18 +26,21 @@
             padding: 18px 0;
             border-bottom: 1px solid #222;
         }
+
         .nav ul {
             display: flex;
             justify-content: center;
             gap: 50px;
             list-style: none;
         }
+
         .nav a {
             color: #ddd;
             text-decoration: none;
             font-weight: 500;
             font-size: 1.05rem;
         }
+
         .nav a:hover { color: #ff5252; }
 
         .hero {
@@ -47,16 +53,19 @@
             text-align: center;
             color: white;
         }
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4.6rem;
             margin-bottom: 10px;
         }
+
         .hero .subtitle {
             font-size: 1.35rem;
             opacity: 0.9;
             margin-bottom: 40px;
         }
+
         .btn {
             display: inline-block;
             padding: 14px 34px;
@@ -66,6 +75,7 @@
             margin: 8px;
             transition: 0.3s;
         }
+
         .btn-primary { background: #ff5252; color: white; }
         .btn-outline { border: 2px solid #ddd; color: #ddd; }
 
@@ -75,10 +85,41 @@
             margin: 0 auto;
             text-align: center;
         }
+
         .intro h2 {
             font-size: 2.4rem;
             margin-bottom: 25px;
             color: white;
+        }
+
+        /* Panel Administratora */
+        .admin-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #222;
+            color: #ddd;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 200;
+            font-size: 0.95rem;
+        }
+
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #111;
+            padding: 35px 40px;
+            border-radius: 12px;
+            border: 1px solid #444;
+            z-index: 300;
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
         }
     </style>
 </head>
@@ -112,5 +153,75 @@
         </p>
     </section>
 
+    <!-- Przycisk Administratora -->
+    <div class="admin-btn" onclick="showAdminPanel()">🔧 Admin</div>
+
+    <!-- Panel logowania -->
+    <div id="adminPanel" class="admin-panel">
+        <h2 style="color:#ff5252; margin-bottom:25px;">Panel Administratora</h2>
+        
+        <input type="password" id="adminPassword" placeholder="Wpisz hasło" 
+               style="width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #555; background:#1a1a1a; color:white;">
+        
+        <button onclick="checkPassword()" 
+                style="padding:12px 24px; background:#ff5252; color:white; border:none; border-radius:8px; cursor:pointer; width:100%; margin-bottom:10px;">
+            Zaloguj się
+        </button>
+
+        <div id="adminControls" style="display:none; margin-top:15px;">
+            <button onclick="toggleMaintenance(true)" 
+                    style="background:#ff5252; color:white; padding:12px; margin:8px 0; width:100%; border:none; border-radius:8px;">
+                Włącz przerwę techniczną
+            </button>
+            <button onclick="toggleMaintenance(false)" 
+                    style="background:#333; color:white; padding:12px; margin:8px 0; width:100%; border:none; border-radius:8px;">
+                Wyłącz przerwę techniczną
+            </button>
+        </div>
+
+        <button onclick="hideAdminPanel()" style="margin-top:20px; color:#888; background:none; border:none; cursor:pointer;">
+            Zamknij
+        </button>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = "Shire123%";
+
+        function showAdminPanel() {
+            document.getElementById("adminPanel").style.display = "block";
+        }
+
+        function hideAdminPanel() {
+            document.getElementById("adminPanel").style.display = "none";
+            document.getElementById("adminPassword").value = "";
+        }
+
+        function checkPassword() {
+            const input = document.getElementById("adminPassword").value.trim();
+            if (input === ADMIN_PASSWORD) {
+                document.getElementById("adminControls").style.display = "block";
+            } else {
+                alert("❌ Niepoprawne hasło!");
+            }
+        }
+
+        function toggleMaintenance(enable) {
+            if (enable) {
+                localStorage.setItem("maintenanceMode", "true");
+                alert("✅ Przerwa techniczna została WŁĄCZONA");
+            } else {
+                localStorage.removeItem("maintenanceMode");
+                alert("✅ Przerwa techniczna została WYŁĄCZONA");
+            }
+            hideAdminPanel();
+        }
+
+        // Automatyczne przekierowanie jeśli przerwa jest włączona
+        window.onload = function() {
+            if (localStorage.getItem("maintenanceMode") === "true") {
+                window.location.href = "przerwa.html";
+            }
+        }
+    </script>
 </body>
 </html>
