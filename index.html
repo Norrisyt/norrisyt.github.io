@@ -80,19 +80,6 @@
             margin-bottom: 25px;
             color: white;
         }
-
-        /* Panel Admin */
-        .admin-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #222;
-            color: #ddd;
-            padding: 12px 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            z-index: 200;
-        }
     </style>
 </head>
 <body>
@@ -125,33 +112,5 @@
         </p>
     </section>
 
-    <!-- Panel Admin -->
-    <div class="admin-btn" onclick="showAdminPanel()">🔧 Admin</div>
-
-    <script>
-        const ADMIN_PASSWORD = "Shire123%";
-
-        function showAdminPanel() {
-            const pass = prompt("Wpisz hasło administratora:");
-            if (pass === ADMIN_PASSWORD) {
-                const action = confirm("Włączyć przerwę techniczną?\n\nOK = Włącz\nAnuluj = Wyłącz");
-                if (action) {
-                    localStorage.setItem("maintenanceMode", "true");
-                    alert("Przerwa techniczna WŁĄCZONA");
-                } else {
-                    localStorage.removeItem("maintenanceMode");
-                    alert("Przerwa techniczna WYŁĄCZONA");
-                }
-            } else {
-                alert("Niepoprawne hasło!");
-            }
-        }
-
-        window.onload = function() {
-            if (localStorage.getItem("maintenanceMode") === "true") {
-                window.location.href = "przerwa.html";
-            }
-        }
-    </script>
 </body>
 </html>
