@@ -1,33 +1,118 @@
-<h1>O mnie</h1>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mnie - Adiminos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ddd;
+            line-height: 1.75;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,10,10,0.97);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            padding: 18px 0;
+            border-bottom: 1px solid #222;
+        }
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            list-style: none;
+        }
+        .nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        .nav a:hover { color: #ff5252; }
 
-<p>Cześć! Jestem <strong>Adiminos</strong>, mam 18 lat.</p>
+        .container {
+            max-width: 900px;
+            margin: 100px auto 60px;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.4rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+        p {
+            font-size: 1.18rem;
+            color: #ccc;
+            margin-bottom: 22px;
+        }
+        .highlight { color: #ff5252; font-weight: 600; }
+    </style>
+</head>
+<body>
 
-<p>
-    Z fotografią jestem na początku drogi, ale już mnie ona mocno wciągnęła. 
-    Wszystko robię telefonem – nie gonię za idealnymi kadrami, tylko staram się łapać prawdziwe momenty: światło na ulicy, ludzi w biegu, emocje, które dzieją się tylko przez chwilę.
-</p>
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="o-mnie.html">O mnie</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="osp.html">OSP</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
 
-<p>
-    Najbardziej jara mnie fotografia uliczna. Szczególnie wozy komunikacji miejskiej – tramwaje, EN-ki, Flirty, autobusy szynowe. 
-    Lubię je fotografować w ruchu, w deszczu, wieczorem, w złotym świetle albo w całkowitym chaosie miasta. To dla mnie taki mały street photography vibe.
-</p>
+    <div class="container">
+        <h1>O mnie</h1>
 
-<h2>Straż</h2>
-<p>
-    Od 5 lat jestem druhem w Ochotniczej Straży Pożarnej w Bożej Woli. 
-    Zaczynałem jako 13–15 latek w Młodzieżowej Drużynie Pożarniczej (MDP), a od 2023 roku jestem już pełnoprawnym członkiem zwyczajnym jednostki.
-</p>
+        <p>Cześć! Jestem <strong>Adiminos</strong>, mam 18 lat.</p>
 
-<p>
-    Straż to dla mnie zupełnie inna energia niż fotografia. Tu jest adrenalina, presja czasu, praca w zespole i świadomość, że czasem naprawdę możesz komuś pomóc. 
-    Na początku myślałem, że to będzie tylko „fajna przygoda”, a wyszło na to, że to już ważna część mojego życia.
-</p>
+        <p>
+            Z fotografią jestem dopiero na początku drogi, ale już mnie ona mocno wciągnęła. 
+            Wszystko robię telefonem – nie gonię za idealnymi kadrami, tylko staram się łapać prawdziwe momenty: światło na ulicy, ludzi w biegu i emocje, które dzieją się tylko przez chwilę.
+        </p>
 
-<p>
-    Czasem zabieram telefon na akcje, ćwiczenia czy wyjazdy z jednostką. Dzięki temu mogę dokumentować strażackie życie od środka – jak wygląda remiza, jak przygotowujemy się do wyjazdu, jak wygląda komora dymowa czy prawdziwa akcja.
-</p>
+        <p>
+            Najbardziej jara mnie fotografia uliczna. Szczególnie wozy komunikacji miejskiej – tramwaje, EN-ki, Flirty i autobusy szynowe. 
+            Lubię je fotografować w ruchu, w deszczu, wieczorem, w złotym świetle albo w całkowitym chaosie miasta. To dla mnie taki mały street photography vibe.
+        </p>
 
-<p>
-    Te dwie pasje – fotografia i straż – świetnie się uzupełniają. Jedna uczy mnie cierpliwości i patrzenia, druga szybkości i działania. 
-    Staram się łączyć jedno z drugim, jak tylko mogę.
-</p>
+        <h2>Straż</h2>
+        <p>
+            Od 5 lat jestem druhem w Ochotniczej Straży Pożarnej w Bożej Woli. 
+            Zaczynałem jako 13–15 latek w MDP, a od 2023 roku jestem już pełnoprawnym członkiem zwyczajnym jednostki.
+        </p>
+
+        <p>
+            Straż to dla mnie zupełnie inna energia niż fotografia. Tu jest adrenalina, presja czasu, praca w zespole i świadomość, że czasem naprawdę możesz komuś pomóc.
+            Na początku myślałem, że to będzie tylko „fajna przygoda”, a wyszło na to, że to już ważna część mojego życia.
+        </p>
+
+        <p>
+            Czasem zabieram telefon na akcje, ćwiczenia czy wyjazdy z jednostką. Dzięki temu mogę dokumentować strażackie życie od środka – jak wygląda remiza, jak przygotowujemy się do wyjazdu, jak wygląda komora dymowa czy prawdziwa akcja.
+        </p>
+
+        <p>
+            Te dwie pasje – fotografia i straż – świetnie się uzupełniają. 
+            Jedna uczy mnie cierpliwości i patrzenia, druga szybkości i działania. 
+            Staram się łączyć jedno z drugim, jak tylko mogę.
+        </p>
+
+        <a href="index.html" style="color:#ff5252; text-decoration:none; font-weight:600; display:block; margin-top:60px;">← Powrót na stronę główną</a>
+    </div>
+
+</body>
+</html>
